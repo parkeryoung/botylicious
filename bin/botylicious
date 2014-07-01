@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-require_relative '../lib/botylicious'
+require_relative '../lib/botylicious.rb'
 
 Botylicious::Botylicious.start
