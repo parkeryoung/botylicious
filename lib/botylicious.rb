@@ -6,8 +6,12 @@ module Botylicious
   require 'active_support/core_ext/object/blank.rb'
   require 'thor'
   require 'pastie-api'
+  require 'nokogiri'
   require 'botylicious/log_while_away'
   require 'botylicious/help'
+  require 'botylicious/threes'
+  require 'botylicious/explosm'
+  require 'botylicious/imgur'
 
   class Botylicious < Thor
     desc "start CHANNEL", "Start bot in CHANNEL"
@@ -25,7 +29,7 @@ module Botylicious
           c.server = "irc.freenode.org"
           c.channels = ["##{chan}"]
           c.nick = "botylicious"
-          c.plugins.plugins = [::Botylicious::LogWhileAway, ::Botylicious::Help]
+          c.plugins.plugins = [::Botylicious::LogWhileAway, ::Botylicious::Help, ::Botylicious::Threes, ::Botylicious::Explosm, ::Botylicious::Imgur]
           c.plugins.prefix = /^!/
         end
         desc "update", "Will update the repo on the pi and reboot the pi."
