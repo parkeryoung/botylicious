@@ -1,4 +1,4 @@
-require "botylicious/version"
+require_relative "botylicious/version"
 require 'pry'
 module Botylicious
   require 'cinch'
@@ -7,11 +7,11 @@ module Botylicious
   require 'thor'
   require 'pastie-api'
   require 'nokogiri'
-  require 'botylicious/log_while_away'
-  require 'botylicious/help'
-  require 'botylicious/threes'
-  require 'botylicious/explosm'
-  require 'botylicious/imgur'
+  require_relative 'botylicious/log_while_away'
+  require_relative 'botylicious/help'
+  require_relative 'botylicious/threes'
+  require_relative 'botylicious/explosm'
+  require_relative 'botylicious/imgur'
 
   class Botylicious < Thor
     desc "start CHANNEL", "Start bot in CHANNEL"
